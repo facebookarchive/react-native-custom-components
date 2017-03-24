@@ -1,0 +1,19 @@
+{
+  "name": "react-native-deprecated-custom-components",
+  "version": "0.1.0",
+  "description": "Deprecated custom components that originally shipped with React Native",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:facebookarchive/react-native-custom-components.git"
+  },
+  "main": "src/CustomComponents.js",
+  "dependencies": {
+    "fbjs": "~0.8.9",
+    "immutable": "~3.7.6",
+    "react-timer-mixin": "^0.13.2",
+    "rebound": "^0.0.13"
+  },
+  "peerDependencies": {
+    "react-native": "*"
+  }
+}
