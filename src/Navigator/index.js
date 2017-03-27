@@ -47,7 +47,7 @@ var React = require('react');
 var Subscribable = require('./Subscribable');
 var TimerMixin = require('react-timer-mixin');
 
-var clamp = require('./clamp');
+var clamp = require('clamp');
 var invariant = require('fbjs/lib/invariant');
 var rebound = require('rebound');
 

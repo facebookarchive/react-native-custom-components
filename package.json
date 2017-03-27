@@ -8,6 +8,7 @@
   },
   "main": "src/CustomComponents.js",
   "dependencies": {
+    "clamp": "^1.0.1",
     "fbjs": "~0.8.9",
     "immutable": "~3.7.6",
     "react-timer-mixin": "^0.13.2",
