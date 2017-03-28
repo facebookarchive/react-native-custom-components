@@ -22,24 +22,26 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THE SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
- * @typechecks
+ * @flow
  */
 'use strict';
 
-/**
- * @param {number} value
- * @param {number} min
- * @param {number} max
- * @return {number}
- */
-function clamp(min, value, max) {
-  if (value < min) {
-    return min;
+import type  {
+  NavigationAnimatedValue
+} from './NavigationTypeDefinition';
+
+class NavigationAnimatedValueSubscription {
+  _value: NavigationAnimatedValue;
+  _token: string;
+
+  constructor(value: NavigationAnimatedValue, callback: Function) {
+    this._value = value;
+    this._token = value.addListener(callback);
   }
-  if (value > max) {
-    return max;
+
+  remove(): void {
+    this._value.removeListener(this._token);
   }
-  return value;
 }
 
-module.exports = clamp;
+module.exports = NavigationAnimatedValueSubscription;

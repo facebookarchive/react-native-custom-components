@@ -6,14 +6,24 @@
     "type": "git",
     "url": "git@github.com:facebookarchive/react-native-custom-components.git"
   },
+  "scripts": {
+    "flow": "flow"
+  },
   "main": "src/CustomComponents.js",
   "dependencies": {
+    "clamp": "^1.0.1",
     "fbjs": "~0.8.9",
     "immutable": "~3.7.6",
     "react-timer-mixin": "^0.13.2",
     "rebound": "^0.0.13"
   },
   "peerDependencies": {
+    "react": "*",
     "react-native": "*"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.38.0",
+    "react": "~15.4.1",
+    "react-native": "^0.42.3"
   }
 }
