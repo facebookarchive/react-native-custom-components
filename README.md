@@ -14,3 +14,37 @@ Latest documentation is available here: http://facebook.github.io/react-native/r
 - Navigator.props.sceneStyle must be a plain object, not a stylesheet!
 
 (this breaking change is needed to avoid calling React Native's private APIs)
+
+### How to use it
+
+Example use of `Navigator`
+
+```
+import React, {Component} from 'react';
+import { AppRegistry, StyleSheet, View } from 'react-native';
+
+import CustomComponents from 'react-native-deprecated-custom-components';
+
+export default class ExampleApp extends Component {
+
+  render() {
+    return (
+      <View style={styles.container}>
+
+        <CustomComponents.Navigator />
+
+      </View>
+    );
+  }
+
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#eeeeee',
+  },
+});
+
+AppRegistry.registerComponent('ExampleApp', () => ExampleApp);
+```
