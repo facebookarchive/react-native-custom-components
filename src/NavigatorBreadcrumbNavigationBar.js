@@ -29,6 +29,7 @@ import {
   Platform,
   StyleSheet,
   View,
+  ViewPropTypes,
 } from 'react-native';
 import React from 'react';
 
@@ -44,7 +45,7 @@ const { Map } = require('immutable');
 const Interpolators = NavigatorBreadcrumbNavigationBarStyles.Interpolators;
 const NavigatorNavigationBarStyles = Platform.OS === 'android' ?
   NavigatorNavigationBarStylesAndroid : NavigatorNavigationBarStylesIOS;
-const PropTypes = React.PropTypes;
+const PropTypes = require('prop-types');
 
 /**
  * Reusable props objects.
@@ -96,7 +97,7 @@ class NavigatorBreadcrumbNavigationBar extends React.Component {
       routeStack: React.PropTypes.arrayOf(React.PropTypes.object),
       presentedIndex: React.PropTypes.number,
     }),
-    style: View.propTypes.style,
+    style: ViewPropTypes.style,
   };
 
   static Styles = NavigatorBreadcrumbNavigationBarStyles;

@@ -35,6 +35,7 @@ import {
   StyleSheet,
   TVEventHandler,
   View,
+  ViewPropTypes,
 } from 'react-native';
 
 var AnimationsDebugModule = NativeModules.AnimationsDebugModule;
@@ -53,7 +54,7 @@ var rebound = require('rebound');
 
 var flattenStyle = require('./flattenStyle');
 
-var PropTypes = React.PropTypes;
+var PropTypes = require('prop-types');
 
 // TODO: this is not ideal because there is no guarantee that the navigator
 // is full screen, however we don't have a good way to measure the actual
@@ -391,7 +392,7 @@ var Navigator = React.createClass({
     /**
      * Styles to apply to the container of each scene.
      */
-    sceneStyle: View.propTypes.style,
+    sceneStyle: ViewPropTypes.style,
   },
 
   statics: {
@@ -477,12 +478,14 @@ var Navigator = React.createClass({
   },
 
   componentDidMount: function() {
+    this._isMounted = true;
     this._handleSpringUpdate();
     this._emitDidFocus(this.state.routeStack[this.state.presentedIndex]);
     this._enableTVEventHandler();
   },
 
   componentWillUnmount: function() {
+    this._isMounted = false;
     if (this._navigationContext) {
       this._navigationContext.dispose();
       this._navigationContext = null;
@@ -571,7 +574,7 @@ var Navigator = React.createClass({
    * happening, we only set values for the transition and the gesture will catch up later
    */
   _handleSpringUpdate: function() {
-    if (!this.isMounted()) {
+    if (!this._isMounted) {
       return;
     }
     // Prioritize handling transition in progress over a gesture:
@@ -595,7 +598,7 @@ var Navigator = React.createClass({
    * This happens at the end of a transition started by transitionTo, and when the spring catches up to a pending gesture
    */
   _completeTransition: function() {
-    if (!this.isMounted()) {
+    if (!this._isMounted) {
       return;
     }
 
