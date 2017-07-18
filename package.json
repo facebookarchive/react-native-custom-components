@@ -10,6 +10,7 @@
   "dependencies": {
     "fbjs": "~0.8.9",
     "immutable": "~3.7.6",
+    "prop-types": "^15.5.10",
     "react-timer-mixin": "^0.13.2",
     "rebound": "^0.0.13"
   },
