@@ -45,6 +45,7 @@ var NavigatorBreadcrumbNavigationBar = require('./NavigatorBreadcrumbNavigationB
 var NavigatorNavigationBar = require('./NavigatorNavigationBar');
 var NavigatorSceneConfigs = require('./NavigatorSceneConfigs');
 var React = require('react');
+var createClass = require('create-react-class');
 var Subscribable = require('./Subscribable');
 var TimerMixin = require('react-timer-mixin');
 
@@ -298,7 +299,7 @@ var GESTURE_ACTIONS = [
  * See `Navigator.SceneConfigs` for default animations and more info on
  * available [scene config options](docs/navigator.html#configurescene).
  */
-var Navigator = React.createClass({
+var Navigator = createClass({
 
   propTypes: {
     /**
