@@ -8,6 +8,7 @@
   },
   "main": "src/CustomComponents.js",
   "dependencies": {
+    "create-react-class": "^15.6.0",
     "fbjs": "~0.8.9",
     "immutable": "~3.7.6",
     "prop-types": "^15.5.10",
