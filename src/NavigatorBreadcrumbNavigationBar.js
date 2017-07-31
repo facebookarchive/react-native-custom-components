@@ -93,9 +93,9 @@ class NavigatorBreadcrumbNavigationBar extends React.Component {
       titleContentForRoute: PropTypes.func,
       iconForRoute: PropTypes.func,
     }),
-    navState: React.PropTypes.shape({
-      routeStack: React.PropTypes.arrayOf(React.PropTypes.object),
-      presentedIndex: React.PropTypes.number,
+    navState: PropTypes.shape({
+      routeStack: PropTypes.arrayOf(PropTypes.object),
+      presentedIndex: PropTypes.number,
     }),
     style: ViewPropTypes.style,
   };
