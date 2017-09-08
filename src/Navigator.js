@@ -48,6 +48,7 @@ var React = require('react');
 var Subscribable = require('./Subscribable');
 var TimerMixin = require('react-timer-mixin');
 
+var createReactClass = require('create-react-class');
 var clamp = require('./clamp');
 var invariant = require('fbjs/lib/invariant');
 var rebound = require('rebound');
@@ -298,7 +299,7 @@ var GESTURE_ACTIONS = [
  * See `Navigator.SceneConfigs` for default animations and more info on
  * available [scene config options](docs/navigator.html#configurescene).
  */
-var Navigator = React.createClass({
+var Navigator = createReactClass({
 
   propTypes: {
     /**
