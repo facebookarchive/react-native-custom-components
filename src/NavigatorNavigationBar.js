@@ -164,14 +164,20 @@ class NavigatorNavigationBar extends React.Component {
         this._getComponent(componentName, route, index)
       )
     );
-
-    return (
+    
+    let ret = (
       <View
         key={this._key}
         style={[styles.navBarContainer, navBarStyle, this.props.style]}>
         {components}
       </View>
-    );
+      );
+    
+    if (this.getShouldDisplay) {
+      return this.getShouldDisplay() ? ret : null;
+    } else {
+      return ret;
+    }
   }
 
   _getComponent = (/*string*/componentName, /*object*/route, /*number*/index) => /*?Object*/ {
