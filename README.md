@@ -6,7 +6,7 @@ This is a module for legacy "CustomComponents" to gracefully deprecate.
 
 The navigator component in this module will behave identically as the one in old version of React native, with one exception:
 
-Latest documentation is available here: http://facebook.github.io/react-native/releases/0.43/docs/navigator.html
+Latest documentation is available here: https://facebook.github.io/react-native/docs/0.43/navigator.html
 
 
 ### Breaking Changes from react-native
