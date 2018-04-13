@@ -197,6 +197,7 @@ class NavigatorNavigationBar extends React.Component {
       this.props.navigationStyles.Stages.Left;
     rendered = (
       <View
+        key={this._key + '_' + componentName + '_' + index}
         ref={(ref) => {
           this._components[componentName] = this._components[componentName].set(route, ref);
         }}
