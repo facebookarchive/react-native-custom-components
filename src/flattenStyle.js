@@ -32,7 +32,6 @@ import type { StyleObj } from 'StyleSheetTypes';
 
 function getStyle(style) {
   if (style && typeof style === 'number') {
-    debugger;
     invariant(false, "Error when using Navigator from react-native-custom-components. Please provide a raw object to `props.sceneStyle` instead of a StyleSheet reference.");
   }
   return style;
