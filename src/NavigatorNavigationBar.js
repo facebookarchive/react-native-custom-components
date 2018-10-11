@@ -164,12 +164,18 @@ class NavigatorNavigationBar extends React.Component {
         this._getComponent(componentName, route, index)
       )
     );
-
+    
     return (
       <View
         key={this._key}
-        style={[styles.navBarContainer, navBarStyle, this.props.style]}>
-        {components}
+        style={[
+          styles.navBarContainer,
+          !this.getShouldDisplay() && styles.navBarHidden,
+          navBarStyle,
+          this.props.style
+        ]}
+      >
+          {components}
       </View>
     );
   }
@@ -219,6 +225,9 @@ var styles = StyleSheet.create({
     left: 0,
     right: 0,
     backgroundColor: 'transparent',
+  },
+  navBarHidden: {
+    zIndex: -1,
   },
 });
 
