@@ -165,19 +165,19 @@ class NavigatorNavigationBar extends React.Component {
       )
     );
     
-    let ret = (
+    return (
       <View
         key={this._key}
-        style={[styles.navBarContainer, navBarStyle, this.props.style]}>
-        {components}
+        style={[
+          styles.navBarContainer,
+          !this.getShouldDisplay() && styles.navBarHidden,
+          navBarStyle,
+          this.props.style
+        ]}
+      >
+          {components}
       </View>
-      );
-    
-    if (this.getShouldDisplay) {
-      return this.getShouldDisplay() ? ret : null;
-    } else {
-      return ret;
-    }
+    );
   }
 
   _getComponent = (/*string*/componentName, /*object*/route, /*number*/index) => /*?Object*/ {
@@ -225,6 +225,9 @@ var styles = StyleSheet.create({
     left: 0,
     right: 0,
     backgroundColor: 'transparent',
+  },
+  navBarHidden: {
+    zIndex: -1,
   },
 });
 
