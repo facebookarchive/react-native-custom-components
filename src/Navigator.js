@@ -725,7 +725,8 @@ var Navigator = createReactClass({
 
   _clearTransformations: function(sceneIndex) {
     const defaultStyle = flattenStyle([DEFAULT_SCENE_STYLE]);
-    this._sceneRefs[sceneIndex].setNativeProps({ style: defaultStyle });
+    this._sceneRefs[sceneIndex] && 
+      this._sceneRefs[sceneIndex].setNativeProps({ style: defaultStyle });
   },
 
   _onAnimationStart: function() {
