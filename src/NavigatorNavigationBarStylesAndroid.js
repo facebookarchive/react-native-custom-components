@@ -60,6 +60,7 @@ var BASE_STYLES = {
   RightButton: {
     position: 'absolute',
     top: 0,
+    left: SCREEN_WIDTH,
     right: BUTTON_EFFECTIVE_MARGIN,
     overflow: 'hidden',
     alignItems: 'flex-end',
