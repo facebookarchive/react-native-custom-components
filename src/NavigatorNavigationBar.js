@@ -140,7 +140,7 @@ class NavigatorNavigationBar extends React.Component {
       var component = this._components[componentName].get(this.props.navState.routeStack[index]);
       var props = this._getReusableProps(componentName, index);
       if (component && interpolate[componentName](props.style, amount)) {
-        if (isNan(props.style.left)) {
+        if (isNaN(props.style.left)) {
           delete props.style.left;
         }
         props.pointerEvents = props.style.opacity === 0 ? 'none' : 'box-none';
