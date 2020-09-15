@@ -7,7 +7,7 @@
     "url": "git@github.com:facebookarchive/react-native-custom-components.git"
   },
   "scripts": {
-    "build": "npx babel src --out-dir dist --copy-files",
+    "build": "npx babel ./src --out-dir ./dist --copy-files",
     "prepublishOnly": "npm run build"
   },
   "main": "dist/CustomComponents.js",
@@ -21,7 +21,10 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.11.5",
-    "@babel/core": "^7.11.5"
+    "@babel/core": "^7.11.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "metro-react-native-babel-preset": "^0.56.4"
   },
   "peerDependencies": {
     "react-native": "*"
